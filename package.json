@@ -5,6 +5,6 @@
     "docker:init": "docker compose up -d --build",
     "docker:start": "docker compose start",
     "docker:stop": "docker stop $(docker ps -q) ",
-    "export-db": "bash docker/mysql/export-db.sh"
+    "export-db": "bash shell/export-db.sh"
   }
 }
