@@ -2,7 +2,7 @@
 
 #### Development Commands
 
-| コマンド           | 説明                                   |
+| Command           | Description                                   |
 | ------------------ | -------------------------------------- |
 | **`docker:init`**  | Executed on the initial start of Docker                  |
 | **`docker:start`** | Start Docker                   |
@@ -11,7 +11,7 @@
 
 
 #### URLs
-| URL                   | 説明                                                  |
+| URL                   | Description                                                  |
 | --------------------- | ----------------------------------------------------- |
 | http://localhost      | Local server with the document root at /dist |
 | http://localhost:8888 | Local phpMyAdmin  |
