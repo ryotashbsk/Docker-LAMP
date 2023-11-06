@@ -1,0 +1,12 @@
+{  
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "docker/mysql/data": true,
+    "docker/phpmyadmin/sessions": true,
+  },
+	"files.exclude": {
+		"docker/mysql/data": true,
+    "docker/phpmyadmin/sessions": true,
+  },
+}

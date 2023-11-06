@@ -1,0 +1,3 @@
+*.log
+docker/mysql/data
+docker/phpmyadmin/sessions
