@@ -5,35 +5,30 @@ services:
     build: ./docker/php-apache
     ports:
       - 80:80
-      - 443:443
     volumes:
       - ./dist:/var/www/html
 
   mysql:
     container_name: docker-lamp-mysql
     platform: linux/x86_64
-    build: ./docker/mysql
-    ports:
-      - 3306:3306
+    image: mysql:latest
     volumes:
-      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
-      - ./docker/mysql/data:/var/lib/mysql
+      - mysql:/var/lib/mysql
+      - ./docker/mysql:/docker-entrypoint-initdb.d
     environment:
+      MYSQL_DATABASE: localdb
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: mydb_user
-      MYSQL_PASSWORD: mydb_pwd
-      TZ: 'Asia/Tokyo'
 
   phpmyadmin:
     container_name: docker-lamp-phpmyadmin
-    build: ./docker/phpmyadmin
+    platform: 'linux/amd64'
+    image: phpmyadmin:latest
     depends_on:
       - mysql
     ports:
       - 8888:80
     volumes:
-      - ./docker/phpmyadmin/sessions:/sessions
+      - phpmyadmin:/sessions
     environment:
       PMA_ARBITRARY: 1
       PMA_HOST: mysql
